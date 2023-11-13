@@ -119,7 +119,7 @@ function submitForm(answer) {
         setTimeout(() => {
             let shouldError = answer.toLowerCase() !== '10'
             if (shouldError) {
-                reject(new Error('Good guess but a wrong answer. Try again!'));
+                reject(new Error('Sorry, wrong answer. Try again!'));
             } else {
                 resolve();
             }

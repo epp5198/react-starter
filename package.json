@@ -1,5 +1,6 @@
 {
-  "name": "untitled",
+  "name": "react",
+  "homepage": "https://epp5198.github.io/react-starter/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

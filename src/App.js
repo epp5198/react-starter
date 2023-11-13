@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+
+
+const initialList = [
+  { id: 0, title: 'Great Barrier Reef', seen: false },
+  { id: 1, title: 'Grand Canyon', seen: false },
+  { id: 2, title: 'Northern Lights', seen: false },
+];
+
+export default function BucketList() {
+  function useImmer(initialList) {
+    
+  }
+
+  const [list, updateList] = useImmer(initialList);
+
+  function handleToggle(artworkId, nextSeen) {
+    updateList(draft => {
+      const artwork = draft.find(a =>
+          a.id === artworkId
+      );
+      artwork.seen = nextSeen;
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <h1>My Bucket List</h1>
+        <h2>A list of things I want to see:</h2>
+        <ItemList
+            artworks={list}
+            onToggle={handleToggle} />
+      </>
   );
 }
 
-export default App;
+function ItemList({ artworks, onToggle }) {
+  return (
+      <ul>
+        {artworks.map(artwork => (
+            <li key={artwork.id}>
+              <label>
+                <input
+                    type="checkbox"
+                    checked={artwork.seen}
+                    onChange={e => {
+                      onToggle(
+                          artwork.id,
+                          e.target.checked
+                      );
+                    }}
+                />
+                {artwork.title}
+              </label>
+            </li>
+        ))}
+      </ul>
+  );
+}
+
+

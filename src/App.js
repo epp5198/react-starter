@@ -119,10 +119,34 @@ function submitForm(answer) {
         setTimeout(() => {
             let shouldError = answer.toLowerCase() !== '10'
             if (shouldError) {
-                reject(new Error('Sorry, wrong answer. Try again!'));
+                reject(new Error('Sorry, wrong answer. Try again'));
             } else {
                 resolve();
             }
         }, 1500);
     });
-}
+}import React, { useState } from 'react';
+
+const PhotoAlbum = () => {
+    const [photoUrls] = useState([
+        //put photos here when fixed
+    ]);
+
+    return (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+            {photoUrls.map((url, index) => (
+                <img
+                    key={index}
+                    src={url}
+                    alt={`Photo ${index + 1}`}
+                    style={{
+                        maxWidth: '100%',
+                        height: 'auto',
+                        borderRadius: '8px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                    }}
+                />
+            ))}
+        </div>
+    );
+};

@@ -86,7 +86,7 @@ export function Form() {
 
     return (
         <>
-            <h2>City quiz</h2>
+            <h2>test quiz</h2>
             <p>
                 What is 5+5
             </p>

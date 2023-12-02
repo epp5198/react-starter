@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 
 const PhotoAlbum = () => {
     const [photos, setPhotos] = useState([
-        'photo1.jpg',
-        'photo2.jpg',
-        'photo3.jpg',
-        // Add more photo URLs as needed
+       //get assets folder to work and add photo folder here
     ]);
 
     return (

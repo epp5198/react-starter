@@ -109,7 +109,6 @@ export function Form() {
 }
 
 function submitForm(answer) {
-    // Pretend it's hitting the network.
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             let shouldError = answer.toLowerCase() !== '10';
@@ -123,33 +122,3 @@ function submitForm(answer) {
         }, 1500);
     });
 }
-
-const PhotoAlbum = () => {
-    const [photoUrls] = useState([
-        // put photos here when fixed
-    ]);
-
-    return (
-        <div
-            style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '10px',
-            }}
-        >
-            {photoUrls.map((url, index) => (
-                <img
-                    key={index}
-                    src={url}
-                    alt={`Photo ${index + 1}`}
-                    style={{
-                        maxWidth: '100%',
-                        height: 'auto',
-                        borderRadius: '8px',
-                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                    }}
-                />
-            ))}
-        </div>
-    );
-};

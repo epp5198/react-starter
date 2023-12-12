@@ -62,18 +62,22 @@ function ItemList({ artworks, onToggle }) {
 
 // Remove the unnecessary submitForm function
 
-const Navbar = () => (
-    <nav>
-        <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
-            <li>
-                <Link to="/assets">Photographs</Link>
-            </li>
-        </ul>
-    </nav>
-);
+class Navbar extends React.Component {
+    render() {
+        return (
+            <nav>
+                <ul>
+                    <li>
+                        <Link to="/app.js">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/assets">Photographs</Link>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+}
 
 export { Navbar }; // Add export statement for Navbar
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import produce from 'immer'; // Import the immer library
+import produce from 'immer';
 
 const initialList = [
     { id: 0, title: 'Great Barrier Reef', seen: false },
@@ -122,3 +122,21 @@ function submitForm(answer) {
         }, 1500);
     });
 }
+import { Link } from 'react-router-dom'; // Assuming you are using React Router for navigation
+
+const Navbar = () => {
+    return (
+        <nav>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/assets">Photographs</Link>
+                </li>
+            </ul>
+        </nav>
+    );
+};
+
+

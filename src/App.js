@@ -22,6 +22,13 @@ const Resume = () => (
     </div>
 );
 
+const Projects = () => (
+    <div>
+        <h2>Projects</h2>
+        <p>These are my projects</p>
+    </div>
+);
+
 const Navbar = () => (
     <nav>
         <ul>
@@ -33,6 +40,9 @@ const Navbar = () => (
             </li>
             <li>
                 <Link to="/resume">Resume</Link>
+            </li>
+            <li>
+                <Link to="/projects">Projects</Link>
             </li>
         </ul>
     </nav>
@@ -48,6 +58,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/photos" element={<Photos />} />
                     <Route path="/resume" element={<Resume />} />
+                    <Route path="/projects" element={<Projects />} />
                 </Routes>
             </div>
         </Router>

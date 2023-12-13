@@ -15,6 +15,13 @@ const Photos = () => (
     </div>
 );
 
+const Resume = () => (
+    <div>
+        <h2>Resume</h2>
+        <p>Resume</p>
+    </div>
+);
+
 const Navbar = () => (
     <nav>
         <ul>
@@ -37,6 +44,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/photos" element={<Photos />} />
+                    <Route path="/resume" element={<Resume />} />
                 </Routes>
             </div>
         </Router>

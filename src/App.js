@@ -8,7 +8,7 @@ const Home = () => (
     </div>
 );
 
-const About = () => (
+const Photos = () => (
     <div>
         <h2>About</h2>
         <p>This is the about page. It provides information about my website.</p>
@@ -38,7 +38,7 @@ const App = () => {
                 <hr />
                 <Routes>
                     <Route path="/" exact component={Home} />
-                    <Route path="/about" component={About} />
+                    <Route path="/Photos.js" component={Photos} />
                 </Routes>
                 <div>
                     <p>Count: {count}</p>

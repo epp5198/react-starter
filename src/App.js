@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Photos from "./Photos";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const Home = () => (
     <div>
@@ -9,7 +8,12 @@ const Home = () => (
     </div>
 );
 
-
+const About = () => (
+    <div>
+        <h2>About</h2>
+        <p>This is the about page. It provides information about my website.</p>
+    </div>
+);
 
 const Navbar = () => (
     <nav>
@@ -18,7 +22,7 @@ const Navbar = () => (
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/photos.js">Photos</Link>
+                <Link to="/about">About</Link>
             </li>
         </ul>
     </nav>
@@ -32,10 +36,10 @@ const App = () => {
             <div>
                 <Navbar />
                 <hr />
-                <Routes>
+                <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/photos.js" component={Photos} />
-                </Routes>
+                    <Route path="/about" component={About} />
+                </Switch>
                 <div>
                     <p>Count: {count}</p>
                     <button onClick={() => setCount(count + 1)}>Increment Count</button>

@@ -36,9 +36,10 @@ const App = () => {
             <div>
                 <Navbar />
                 <hr />
+                <Routes>
                 <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />
-
+                </Routes>
                 <div>
                     <p>Count: {count}</p>
                     <button onClick={() => setCount(count + 1)}>Increment Count</button>

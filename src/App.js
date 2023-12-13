@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const Home = () => (
     <div>
         <h2>Home</h2>
-        <p>Welcome to the home page!</p>
+        <p>This is my portfolio website home page</p>
     </div>
 );
 
 const Photos = () => (
     <div>
-        <h2>About</h2>
-        <p>This is the about page. It provides information about my website.</p>
+        <h2>Photos</h2>
+        <p>Photographs taken by me</p>
     </div>
 );
 
@@ -22,28 +22,22 @@ const Navbar = () => (
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/about">About</Link>
+                <Link to="/photos">Photos</Link>
             </li>
         </ul>
     </nav>
 );
 
 const App = () => {
-    const [count, setCount] = useState(0);
-
     return (
         <Router>
             <div>
                 <Navbar />
                 <hr />
                 <Routes>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/Photos.js" component={Photos} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/photos" element={<Photos />} />
                 </Routes>
-                <div>
-                    <p>Count: {count}</p>
-                    <button onClick={() => setCount(count + 1)}>Increment Count</button>
-                </div>
             </div>
         </Router>
     );

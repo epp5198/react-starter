@@ -9,7 +9,7 @@ const Home = () => (
     </div>
 );
 
-const About = () => (
+const Photos = () => (
     <div>
         <h2>About</h2>
         <p>This is the about page. It provides information about my website.</p>
@@ -23,7 +23,7 @@ const Navbar = () => (
                 <Link to="/">Home</Link>
             </li>
             <li>
-                <Link to="/about">About</Link>
+                <Link to="/photos.js">Photos</Link>
             </li>
         </ul>
     </nav>

@@ -1,84 +1,51 @@
 import React, { useState } from 'react';
-import produce from 'immer';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+const Home = () => (
+    <div>
+        <h2>Home</h2>
+        <p>Welcome to the home page!</p>
+    </div>
+);
 
-const initialList = [
-    { id: 0, title: 'Great Barrier Reef', seen: false },
-    { id: 1, title: 'Grand Canyon', seen: false },
-    { id: 2, title: 'Northern Lights', seen: false },
-];
+const About = () => (
+    <div>
+        <h2>About</h2>
+        <p>This is the about page. It provides information about our website.</p>
+    </div>
+);
 
-export default function BucketList() {
-    function useImmer(initialValue) {
-        const [value, setValue] = useState(initialValue);
-
-        const updateValue = (recipe) => {
-            setValue(produce(value, recipe));
-        };
-
-        return [value, updateValue];
-    }
-
-    const [list, updateList] = useImmer(initialList);
-
-    function handleToggle(artworkId, nextSeen) {
-        updateList((draft) => {
-            const artwork = draft.find((a) => a.id === artworkId);
-            if (artwork) {
-                artwork.seen = nextSeen;
-            }
-        });
-    }
-
-    return (
-        <>
-            <h1>My Bucket List</h1>
-            <h2>A list of things I want to see:</h2>
-            <ItemList artworks={list} onToggle={handleToggle} />
-        </>
-    );
-}
-
-function ItemList({ artworks, onToggle }) {
-    return (
+const Navbar = () => (
+    <nav>
         <ul>
-            {artworks.map((artwork) => (
-                <li key={artwork.id}>
-                    <label>
-                        <input
-                            type="checkbox"
-                            checked={artwork.seen}
-                            onChange={(e) => {
-                                onToggle(artwork.id, e.target.checked);
-                            }}
-                        />
-                        {artwork.title}
-                    </label>
-                </li>
-            ))}
+            <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/about">About</Link>
+            </li>
         </ul>
+    </nav>
+);
+
+const App = () => {
+    const [count, setCount] = useState(0);
+
+    return (
+        <Router>
+            <div>
+                <Navbar />
+                <hr />
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+
+                <div>
+                    <p>Count: {count}</p>
+                    <button onClick={() => setCount(count + 1)}>Increment Count</button>
+                </div>
+            </div>
+        </Router>
     );
-}
+};
 
-// Remove the unnecessary submitForm function
-
-class Navbar extends React.Component {
-    render() {
-        return (
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/app.js">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/assets">Photographs</Link>
-                    </li>
-                </ul>
-            </nav>
-        );
-    }
-}
-
-export { Navbar }; // Add export statement for Navbar
-
-
+export default App;

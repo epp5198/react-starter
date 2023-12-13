@@ -9,12 +9,7 @@ const Home = () => (
     </div>
 );
 
-const Photos = () => (
-    <div>
-        <h2>About</h2>
-        <p>This is the about page. It provides information about my website.</p>
-    </div>
-);
+
 
 const Navbar = () => (
     <nav>

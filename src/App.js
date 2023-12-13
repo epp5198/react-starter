@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Photos from "./Photos";
 
 const Home = () => (
     <div>
@@ -38,7 +39,7 @@ const App = () => {
                 <hr />
                 <Routes>
                     <Route path="/" exact component={Home} />
-                    <Route path="/about" component={About} />
+                    <Route path="/photos.js" component={Photos} />
                 </Routes>
                 <div>
                     <p>Count: {count}</p>

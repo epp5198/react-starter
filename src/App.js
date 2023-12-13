@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 const Home = () => (
     <div>
@@ -36,10 +36,10 @@ const App = () => {
             <div>
                 <Navbar />
                 <hr />
-                <Switch>
+                <Routes>
                     <Route path="/" exact component={Home} />
                     <Route path="/about" component={About} />
-                </Switch>
+                </Routes>
                 <div>
                     <p>Count: {count}</p>
                     <button onClick={() => setCount(count + 1)}>Increment Count</button>

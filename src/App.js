@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Home = () => (
     <div>
@@ -32,7 +32,6 @@ const App = () => {
     const [count, setCount] = useState(0);
 
     return (
-        <Routes>
         <Router>
             <div>
                 <Navbar />
@@ -46,7 +45,6 @@ const App = () => {
                 </div>
             </div>
         </Router>
-        </Routes>
     );
 };
 

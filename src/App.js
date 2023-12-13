@@ -11,7 +11,7 @@ const Home = () => (
 const About = () => (
     <div>
         <h2>About</h2>
-        <p>This is the about page. It provides information about our website.</p>
+        <p>This is the about page. It provides information about my website.</p>
     </div>
 );
 

@@ -17,8 +17,10 @@ const Photos = () => (
 
 const Resume = () => (
     <div>
-        <h2>Resume</h2>
-        <p>Resume</p>
+        <h1>Resume</h1>
+        <h2>Skills</h2>
+        <li>XML</li>
+        <li>Relax NG</li>
     </div>
 );
 

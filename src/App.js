@@ -11,21 +11,17 @@ const Home = () => (
 
 
 import APC_0062 from '../assets/APC_0062.jpg';
-import IMG_4271 from '../assets/IMG_4271.HEIC';
-import IMG_5008 from '../assets/IMG_5008.HEIC';
+
 import IMG_5093 from '../assets/IMG_5093.jpg';
-import IMG_5614 from '../assets/IMG_5614.HEIC';
-import IMG_6257 from '../assets/IMG_6257.HEIC';
+
 const Photos = () => (
     <div>
         <h2>Photos</h2>
         <p>Photographs taken by me</p>
         <img src={APC_0062.jpg} alt='Water flowing over rocks' />
-        <img src={IMG_4271.HEIC} alt='Mountain view from a ski hill' />
-        <img src={IMG_5008.HEIC} alt='Jelly fish in a tank' />
+
         <img src={IMG_5093.jpg} alt='Sunset over a lake' />
-        <img src={IMG_5614.HEIC} alt='Sunset over trees' />
-        <img src={IMG_6257.HEIC} alt='Sunrise' />
+
     </div>
 
 );
